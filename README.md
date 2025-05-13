@@ -2,6 +2,12 @@
 
 For the project to work properly, you need to open the `.env` file (you can use Notepad or Notepad++) and enter your Hive username and active key.
 
+The program searches for the last operations performed by your account. If there is no Power Up operation on "today's date", a Power Up will be performed using the value configured in the HIVE_AMOUNT field of the `.env` file.
+
+If there is already a Power Up operation on "today's date", whether done by Hive Auto Power Up or manually, the program will simply ignore it and will not perform any power up.
+
+So far, the program cannot do anything if it is not executed (scheduled tasks may fail, lack of internet, for example), therefore, to maintain the daily Power Up routine, it is recommended to look at the log files or your Hive profile to see if the Power Up was performed successfully.
+
 ---
 ### ⚠️ WARNING
 **Be very careful when handling your active key!**
