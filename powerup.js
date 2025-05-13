@@ -31,6 +31,7 @@ function log(msg) {
     const fullMsg = `[${timestamp}] ${msg}\n`;
 
     fs.appendFileSync(logFile, fullMsg);
+    
     console.log(fullMsg.trim());
   }
 
