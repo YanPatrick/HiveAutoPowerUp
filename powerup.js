@@ -69,8 +69,10 @@ hive.api.getAccountHistory(username, -1, 1000, (err, result) => {
     .map((entry) => entry[1])
     .filter((op) => op.op[0] === 'transfer_to_vesting')
     .filter((op) => {
-      const timestamp = new Date(op.timestamp);
-      const dateUTC = timestamp.toISOString().split('T')[0];
+      
+      //change 16/05/2025
+      //v25.5.2  
+      const dateUTC = op.timestamp.split('T')[0]; //avoid timezone error
       return dateUTC === utcDateStr && op.op[1].from === username;
     });
 
